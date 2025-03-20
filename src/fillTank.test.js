@@ -1,7 +1,7 @@
 'use strict';
 
 describe('fillTank', () => {
-  const { fillTank } = require('./fillTank');
+  const { fillTank, roundPrice } = require('./fillTank');
 
   it('should fill the tank completely when amount is not provided', () => {
     const customer = {
@@ -121,8 +121,4 @@ describe('fillTank', () => {
     expect(customer.vehicle.fuelRemains).toBe(18);
     expect(customer.money).toBe(3000 - roundPrice(10 * 50.123));
   });
-
-  function roundPrice(price) {
-    return Math.round(price * 100) / 100;
-  }
 });
